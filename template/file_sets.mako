@@ -71,6 +71,7 @@ FileSet {
     File = /var/finity_root.tgz
   }
 }
+
 FileSet {
   Name = etc-usrLocalEtc
   Include {
@@ -101,7 +102,7 @@ FileSet {
 }
 
 FileSet {
-  Name = common-backup
+  Name = var-backup
   Include {
     File = /var/backup
     Options {

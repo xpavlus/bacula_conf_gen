@@ -42,8 +42,8 @@ Job {
   Name = ${cl['name']}_comm
   Type = Backup
   Level = Differential
-  Client = mon
-  FileSet = etc-root-home-backup
+  Client = ${cl['name']}
+  FileSet = root-home
   Schedule = WeeklyCycle
   Storage = ${sd_name}
   Pool = ${cl['name']}-comm-${cl['storage']}
@@ -68,7 +68,7 @@ Job {
   Name = ${cl['name']}_conf
   Type = Backup
   Level = Differential
-  Client = mon
+  Client = ${cl['name']}
   FileSet = etc
   Schedule = WeeklyCycle-2
   Storage = ${sd_name}
@@ -93,7 +93,7 @@ Job {
   Name = ${cl['name']}_www
   Type = Backup
   Level = Differential
-  Client = mon
+  Client = ${cl['name']}
   FileSet = www_compr
   Schedule = WeeklyCycle-4
   Storage = ${sd_name}
@@ -107,6 +107,31 @@ Pool {
   Recycle = yes
   AutoPrune = yes
   LabelFormat = ${cl['name']}-www-${cl['storage']}-
+  Maximum Volume Bytes = 100G
+  Maximum Volume Jobs = 31
+}
+%endif
+
+%if "backup" in backup_type:
+#       www
+Job {
+  Name = ${cl['name']}_backup
+  Type = Backup
+  Level = Differential
+  Client = ${cl['name']}
+  FileSet = var-backup
+  Schedule = WeeklyCycle-4
+  Storage = ${sd_name}
+  Pool = ${cl['name']}-backup-${cl['storage']}
+  Messages = Standard
+}
+Pool {
+  Name = ${cl['name']}-backup-${cl['storage']}
+  Pool Type = Backup
+  Volume Retention = 13 months
+  Recycle = yes
+  AutoPrune = yes
+  LabelFormat = ${cl['name']}-backup-${cl['storage']}-
   Maximum Volume Bytes = 100G
   Maximum Volume Jobs = 31
 }
