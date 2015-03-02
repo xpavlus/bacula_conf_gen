@@ -64,7 +64,7 @@ ${default_client(cl['name'], cl['password'], cl['address'])}
 %if "comm" in backup_type:
 <%
     type="comm"
-    file_set="etc-root-home-backup"
+    file_set="root-home-backup"
     schedule="WeeklyCycle"
     pool_name="%s-%s-%s"%(cl['name'],type,cl['storage'])
     retention_period='7 months'
