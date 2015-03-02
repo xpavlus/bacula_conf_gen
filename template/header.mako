@@ -70,6 +70,16 @@ FileSet {
   }
 }
 
+FileSet {
+  Name = "Catalog"
+  Include {
+    Options {
+      signature = MD5
+    }
+    File = "/var/lib/bacula/bacula.sql"
+  }
+}
+
 Catalog {
   Name = MyCatalog
   dbname = "bacula"; DB Address = ""; dbuser = "bacula"; dbpassword = "ofGFICzKiP4d"
