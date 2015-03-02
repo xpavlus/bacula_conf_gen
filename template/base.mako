@@ -27,7 +27,7 @@ Job {
   Client = ${cl_name}
   FileSet = ${file_set}
   Schedule = ${schedule}
-  Storage = ${storage}_sd
+  Storage = ${storage}-sd
   Pool = ${cl_name}-${type}-${storage}
   Messages = Standard
 }
