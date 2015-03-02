@@ -32,7 +32,7 @@ Job {
   Messages = Standard
 }
 </%def>
-<%def name="default_pool(pool_name, retention_period='13 months', max_bytes='100 G', max_jobs=31)">
+<%def name="default_pool(pool_name, retention_period='13 months', max_bytes='100G', max_jobs=31)">
 #            Pool: ${pool_name}
 Pool {
   Name = ${pool_name}

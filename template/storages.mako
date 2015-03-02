@@ -16,5 +16,5 @@ Storage {
   SDPort = 9103
   Device = FileStorage
   Media Type = File
-  Maximum Concurrent Jobs = 20
+  Maximum Concurrent Jobs = 40
 }
