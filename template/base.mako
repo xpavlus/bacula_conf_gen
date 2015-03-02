@@ -92,4 +92,14 @@ ${default_pool(pool_name)}
 ${default_job(cl['name'], type, file_set , schedule, cl['storage'])}
 ${default_pool(pool_name)}
 %endif
+%if "fin_conf" in backup_type:
+<%
+    type="fin_conf"
+    file_set="etc-usrLocalEtc"
+    schedule="WeeklyCycle-2"
+    pool_name="%s-%s-%s"%(cl['name'], type, cl['storage'])
+%>
+${default_job(cl['name'], type, file_set, schedule, cl['storage'])}
+${default_pool(pool_name)}
+%endif
 %endfor
