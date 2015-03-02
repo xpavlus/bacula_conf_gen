@@ -94,7 +94,7 @@ ${default_pool(pool_name)}
 %endif
 %if "fin_conf" in backup_type:
 <%
-    type="fin_conf"
+    type="conf"
     file_set="etc-usrLocalEtc"
     schedule="WeeklyCycle-2"
     pool_name="%s-%s-%s"%(cl['name'], type, cl['storage'])
