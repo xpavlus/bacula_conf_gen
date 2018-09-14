@@ -90,10 +90,10 @@ Messages {
   mailcommand = "/usr/sbin/bsmtp -8 -h smtp.mariinsky.ru:25 -f bacula@mariinsky.ru -s \"Bacula: %t %e of %c %l\" %r"
   operatorcommand = "/usr/sbin/bsmtp -8 -h smtp.mariinsky.ru:25  -f \"\(Bacula\) \<bacula@mariinsky.ru\>\" -s \"Bacula: Intervention needed for %j\" %r"
 #  mail = pavel@mariinsky.ru = all, !skipped            
-  mail = pavel@mariinsky.ru = error, fatal
-#  mail = backup@mariinsky.ru = error, fatal
-#  operator = backup@mariinsky.ru = mount
-  operator = pavel@mariinsky.ru = mount
+#  mail = pavel@mariinsky.ru = error, fatal
+  mail = backup@mariinsky.ru = error, fatal
+  operator = backup@mariinsky.ru = mount
+#  operator = pavel@mariinsky.ru = mount
   console = all, !skipped, !saved
   append = "/var/log/bacula/bacula.log" = all, !skipped
   catalog = all
