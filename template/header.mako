@@ -5,7 +5,7 @@ Director {
   WorkingDirectory = "/var/lib/bacula"
   PidDirectory = "/var/run/bacula"
   Maximum Concurrent Jobs = 1
-  Password = "Z_aovT0WThgQmuiT-O90qwNchB2hwkdS8"
+  Password = "passwd"
   Messages = Daemon
   DirAddress = 0.0.0.0
 }
@@ -110,6 +110,6 @@ Messages {
 
 Console {
   Name = bacula-mon
-  Password = "NwpeeWLb9LtxRFq1Ow8lW9e2VTEL9TYla"
+  Password = "password"
   CommandACL = status, .status
 }
